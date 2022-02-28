@@ -29,7 +29,8 @@ printf("Hello World") --> std::cout << "Hello World";
 2.54cm = 1 inch
 
 ```c
-#include <stdio.h>
+/*
+  #include <stdio.h>
 void main(void) 
 {
     float cm, inches;
@@ -37,7 +38,23 @@ void main(void)
     scanf("%f",&cm);
     inches = cm / 2.54;
     printf("Length in inches is %f \n", inches);
-}   
+}  
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float cm, inches;
+
+    cout << "Enter a length in cm :";
+    cin >> cm;
+
+    inches = cm / 2.54;
+    cout << "Length in inches is " << inches;
+    
+}
 ```
 
 ## Exercise 2 - Selection
@@ -60,7 +77,7 @@ OtRate = 1700
 Please Note that the input command in C++ is std::cin. This is a representation of the Keyboard.
 
 ```c
-#include <stdio.h>
+/* #include <stdio.h>
 void main(void)
 {
    double salary, netSalary;
@@ -88,7 +105,48 @@ void main(void)
    netSalary = salary + otHrs* otRate;
    printf("Net Salary is %f ", netSalary);
 }
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double salary, netSalary;
+    int etype, otHrs, otRate;
+
+    cout << "Enter Employee type : ";
+    cin >> etype;
+
+    cout << "Enter salary : ";
+    cin >> salary;
+
+    cout << "Enter otHrs :";
+    cin >> otHrs;
+
+    switch (etype)
+    {
+    case 1:
+        otRate = 1000;
+        break;
+
+    case 2:
+        otRate = 1500;
+        break;
+
+    default:
+        otRate = 1700;
+        break;
+
+    }
+
+    netSalary = salary + otHrs * otRate;
+    cout << "Net salary is " << netSalary;
+
+    
+}
 ```
+
 
 ## Exercise 3 - Repeatition
 
